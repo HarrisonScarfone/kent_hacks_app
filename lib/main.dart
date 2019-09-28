@@ -25,14 +25,14 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (ctx) => MainMenuScreen(),
-        ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
-        HomeScreen.routeName: (ctx) => HomeScreen(),
-        ProfileScreen.routeName: (ctx) => ProfileScreen(),
-        PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
-        CategoriesOverviewScreen.routeName: (ctx) => CategoriesOverviewScreen(),
-        CategoryListViewScreen.routeName: (ctx) => CategoryListViewScreen(),
-        ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
+        '/': (ctx) => ProfileScreen(),
+//        ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
+//        HomeScreen.routeName: (ctx) => HomeScreen(),
+//        ProfileScreen.routeName: (ctx) => ProfileScreen(),
+//        PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
+//        CategoriesOverviewScreen.routeName: (ctx) => CategoriesOverviewScreen(),
+//        CategoryListViewScreen.routeName: (ctx) => CategoryListViewScreen(),
+//        ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
       },
     );
   }
