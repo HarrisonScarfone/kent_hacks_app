@@ -10,8 +10,9 @@ class ComparisonScreen extends StatefulWidget {
 }
 
 class _ComparisonScreenState extends State<ComparisonScreen> {
-  @override
+  final userRecord = TextEditingController();
 
+  @override
   String recordTitle = 'TODO - get name from database';
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +21,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
         body: Column(
           children: <Widget>[
             Container(
-              height: 160,
+              height: 200,
               /*decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -36,8 +37,10 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
               alignment: Alignment.center,
               //child: Align(
               //alignment: Alignment.center,
-              child: FlutterLogo(
-                size: 100,
+              child: Image.asset(
+                'assets/images/logoappicon.png',
+                  //height: 150,
+                  //width: 600,
               ),
               //),
             ),
@@ -63,7 +66,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                                 fillColor: Color(0xFF1E1E1F),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(20),
-                                  borderSide: BorderSide(color: Colors.white),
+                                  borderSide: BorderSide(color: Colors.white,),
                                 ),
                                 border: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.white),
@@ -72,6 +75,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                                   color: Colors.white,
                                 )
                             ),
+                            controller: userRecord,
                             keyboardType: TextInputType.number,
                             style: TextStyle(
                               color: Colors.white,
@@ -93,7 +97,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                     children: <Widget>[
                       RaisedButton(
                         onPressed: () {
-
+                          _nextRecord();
                         },
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -127,7 +131,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                       SizedBox(width: 50),
                       RaisedButton(
                         onPressed: () {
-
+                          _save(userRecord, context);
                         },
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -167,4 +171,21 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
       ),
     );
   }
+}
+
+void _nextRecord(){
+  //TODO - pull next random record
+}
+
+void _save(TextEditingController userRecord, BuildContext context){
+  showDialog(
+    context: context,
+    builder: (context) {
+      return AlertDialog(
+        content: Text(
+          userRecord.text,
+        )
+      );
+    }
+  );
 }
