@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CategoryListViewScreen extends StatefulWidget {
-
+  static const routeName = '/category-list-view-screen';
 
   @override
   _CategoryListViewScreenState createState() => _CategoryListViewScreenState();
