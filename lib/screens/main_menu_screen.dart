@@ -19,7 +19,11 @@ class MainMenuScreen extends StatelessWidget {
             Container(
               alignment: Alignment(0.9, -1.0),
               child: FloatingActionButton(
+                backgroundColor: Color(0xFFFFF7BF),
                 onPressed: () {},
+                child: Icon(Icons.account_circle,
+                  size: 55,
+                ),
               ),
             ),
             Container(
@@ -28,19 +32,6 @@ class MainMenuScreen extends StatelessWidget {
                   width: 600
                 ),
               ),
-//              Column(
-//                children: <Widget>[
-//                  Text('Someone Did It',
-//                      style: TextStyle(fontSize: 40),
-//                    textAlign: TextAlign.center
-//                  ),
-//                  Text('Better',
-//                  style: TextStyle(fontSize: 60),
-//                    textAlign: TextAlign.center
-//                ),
-//              ],
-//            ),
-//          ),
             SizedBox(height: 50),
             Container(
               width: 350,
@@ -53,10 +44,10 @@ class MainMenuScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 border: Border(
-                  top: BorderSide(width: 3.0, color: Colors.black),
-                  left: BorderSide(width: 3.0, color: Colors.black),
-                  right: BorderSide(width: 3.0, color: Colors.black),
-                  bottom: BorderSide(width: 3.0, color: Colors.black),
+                  top: BorderSide(width: 3.0, color: Colors.white),
+                  left: BorderSide(width: 3.0, color: Colors.white),
+                  right: BorderSide(width: 3.0, color: Colors.white),
+                  bottom: BorderSide(width: 3.0, color: Colors.white),
                 ),
               ),
               child: Column(
@@ -67,7 +58,7 @@ class MainMenuScreen extends StatelessWidget {
                     margin: containerEdge,
                     child: Text(
                       'See How You Compare',
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(fontSize: 30, fontFamily: 'rockwell'),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -79,8 +70,8 @@ class MainMenuScreen extends StatelessWidget {
                         child: RaisedButton(
                           onPressed: () {},
                           child: Text(
-                            'Random',
-                            style: TextStyle(fontSize: 25, color: Colors.black),
+                            'CATEGORIES',
+                            style: TextStyle(fontSize: 25, color: Colors.black, letterSpacing: 3),
                           ),
                         )),
                   ),
@@ -92,8 +83,8 @@ class MainMenuScreen extends StatelessWidget {
                         child: RaisedButton(
                           onPressed: () {},
                           child: Text(
-                            'Categories',
-                            style: TextStyle(fontSize: 25, color: Colors.black),
+                            'RANDOM',
+                            style: TextStyle(fontSize: 25, color: Colors.black, letterSpacing: 3),
                           ),
                         )),
                   ),
