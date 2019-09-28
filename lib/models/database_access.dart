@@ -7,6 +7,13 @@ class DatabaseAccess {
         .where('id', isEqualTo: id)
         .getDocuments();
   }
+
+  getQueryByCategory(String collection, String category) {
+    return Firestore.instance
+        .collection('records')
+        .where('category', isEqualTo: category)
+        .getDocuments();
+  }
 }
 
 //onPressed: () {
