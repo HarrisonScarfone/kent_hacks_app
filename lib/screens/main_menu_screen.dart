@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'categories_overview_screen.dart';
+
 class MainMenuScreen extends StatelessWidget {
   static const routeName = '/main-menu-screen';
 
@@ -8,6 +10,11 @@ class MainMenuScreen extends StatelessWidget {
     String pulledText =
         "A 1,000 mile journey starts with one step. Then again, so does falling in a ditch and breaking your neck.";
     const containerEdge = EdgeInsets.only(bottom: 30);
+
+    void goToCategories(BuildContext context) {
+      Navigator.of(context).pushNamed(
+          CategoriesOverviewScreen.routeName);
+    }
 
     return Scaffold(
       body: Center(

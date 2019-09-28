@@ -1,19 +1,34 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:kent_hack_app/screens/category_list_view_screen.dart';
+import 'package:kent_hack_app/models/database_access.dart';
+import 'dart:math';
+
+import 'package:kent_hack_app/screens/comparison_screen.dart';
 
 class CategoryGridViewCircle extends StatelessWidget {
   final String title;
+  var record;
 
   CategoryGridViewCircle({this.title});
 
-//  void selectCategory(BuildContext ctx) {
-//    Navigator.of(ctx).pushNamed(
-//      CategoryListViewScreen.routeName,
-//      arguments: {
-//
-//      },
-//    );
-//  }
+  final _random = new Random();
+
+  int next(int min, int max) => min + _random.nextInt(max - min);
+
+  void getRecords() {
+    DatabaseAccess().getQueryByCategory('records', title).then(
+          (QuerySnapshot docs) {
+        if (docs.documents.isNotEmpty) {
+          record = docs.documents[next(0, docs.documents.length-1)];
+        };
+      },
+    );
+  }
+
+  void goToRecords(BuildContext context) {
+    Navigator.of(context).pushNamed(
+       ComparisonScreen.routeName);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +45,7 @@ class CategoryGridViewCircle extends StatelessWidget {
               //This keeps the splash effect within the circle
               borderRadius: BorderRadius.circular(1000.0),
               //Something large to ensure a circle
-              onTap: null,
+              onTap: () => goToRecords,
               child: Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Icon(
@@ -45,7 +60,7 @@ class CategoryGridViewCircle extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        Text('string'),
+        Text(title),
       ],
     );
   }
