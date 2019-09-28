@@ -26,6 +26,7 @@ class _MyAppState extends State<MyApp> {
       ),
       routes: {
         '/': (ctx) => MainMenuScreen(),
+        ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
         HomeScreen.routeName: (ctx) => HomeScreen(),
         ProfileScreen.routeName: (ctx) => ProfileScreen(),
         PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
