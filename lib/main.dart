@@ -20,20 +20,26 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Someone Did It Better',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
+        primarySwatch: Colors.orange,
+        fontFamily: 'legenddeca',
+        textTheme: TextTheme(
+          body1: TextStyle(color: Color(0xFFFFF7BF)),
+          title: TextStyle(fontFamily: '')
+        ),
       ),
       routes: {
-        '/': (ctx) => ProfileScreen(),
-//        ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
-//        HomeScreen.routeName: (ctx) => HomeScreen(),
-//        ProfileScreen.routeName: (ctx) => ProfileScreen(),
-//        PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
-//        CategoriesOverviewScreen.routeName: (ctx) => CategoriesOverviewScreen(),
-//        CategoryListViewScreen.routeName: (ctx) => CategoryListViewScreen(),
-//        ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
-      },
+        '/': (ctx) => MainMenuScreen(),
+          ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
+          HomeScreen.routeName: (ctx) => HomeScreen(),
+          ProfileScreen.routeName: (ctx) => ProfileScreen(),
+          PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
+          CategoriesOverviewScreen.routeName: (ctx) => CategoriesOverviewScreen(),
+          CategoryListViewScreen.routeName: (ctx) => CategoryListViewScreen(),
+          ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
+        },
     );
   }
 }
