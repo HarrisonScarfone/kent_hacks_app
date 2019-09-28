@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:kent_hack_app/screens/categories_overview_screen.dart';
-import 'package:kent_hack_app/screens/category_list_view_screen.dart';
-import 'package:kent_hack_app/screens/comparison_screen.dart';
-import 'package:kent_hack_app/screens/home_screen.dart';
-import 'package:kent_hack_app/screens/past_failures_screen.dart';
-import 'package:kent_hack_app/screens/profile_screen.dart';
+import 'package:kent_hack_app/screens/main_menu_screen.dart';
+
+import 'screens/categories_overview_screen.dart';
+import 'screens/category_list_view_screen.dart';
+import 'screens/comparison_screen.dart';
+import 'screens/home_screen.dart';
+import 'screens/past_failures_screen.dart';
+import 'screens/profile_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,127 +24,15 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CategoriesOverviewScreen(),
-    );
-  }
-}
-
-class MainMenu extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    String pulledText = "Aweful Quote";
-    const containerEdge =  EdgeInsets.only(bottom: 30);
-
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              width: 350,
-              margin: containerEdge,
-              child: Text('"$pulledText"',
-                style: TextStyle(fontSize: 30),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(height: 100),
-            Container(
-              width: 350,
-              margin: containerEdge,
-              child: Text('See How You Compare',
-                style: TextStyle(fontSize: 30),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            SizedBox(height: 50),
-            Container(
-              decoration: const BoxDecoration(
-                  border: Border(
-                    top: BorderSide(width: 1.0, color: Color(0xFFFFFFFFFF)),
-                    left: BorderSide(width: 1.0, color: Color(0xFFFFFFFFFF)),
-                    right: BorderSide(width: 1.0, color: Color(0xFFFFFFFFFF)),
-                  )
-              ),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    margin: containerEdge,
-                    child: const SizedBox(
-                        height: 50,
-                        width: 300,
-                        child: RaisedButton(
-                          child: Text(
-                            'Random',
-                            style: TextStyle(fontSize: 25, color: Colors.black),
-                          ),
-                        )
-                    ),
-                  ),
-                  Container(
-                    margin: containerEdge,
-                    child: const SizedBox(
-                        height: 50,
-                        width: 300,
-                        child: RaisedButton(
-                          child: Text(
-                            'Categories',
-                            style: TextStyle(fontSize: 25, color: Colors.black),
-                          ),
-                        )
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      routes: {
+        '/': (ctx) => MainMenuScreen(),
+        HomeScreen.routeName: (ctx) => HomeScreen(),
+        ProfileScreen.routeName: (ctx) => ProfileScreen(),
+        PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
+        CategoriesOverviewScreen.routeName: (ctx) => CategoriesOverviewScreen(),
+        CategoryListViewScreen.routeName: (ctx) => CategoryListViewScreen(),
+        ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
+      },
     );
   }
 }
