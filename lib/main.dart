@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:kent_hack_app/screens/categories_overview_screen.dart';
+import 'package:kent_hack_app/screens/category_list_view_screen.dart';
+import 'package:kent_hack_app/screens/comparison_screen.dart';
+import 'package:kent_hack_app/screens/home_screen.dart';
+import 'package:kent_hack_app/screens/past_failures_screen.dart';
+import 'package:kent_hack_app/screens/profile_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +22,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainMenu(),
+      home: CategoriesOverviewScreen(),
     );
   }
 }
