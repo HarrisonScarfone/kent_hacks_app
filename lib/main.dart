@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (ctx) => ProfileScreen(),
+        '/': (ctx) => ComparisonScreen(),
 //        ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
 //        HomeScreen.routeName: (ctx) => HomeScreen(),
 //        ProfileScreen.routeName: (ctx) => ProfileScreen(),

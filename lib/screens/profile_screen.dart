@@ -13,9 +13,13 @@ class ProfileScreen extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.only(top: 100),
+              padding: EdgeInsets.only(top: 30),
               alignment: Alignment.center,
-              child: FlutterLogo(size: 120),
+              child: Image.asset(
+                'assets/images/logoappicon.png',
+                height: 200,
+                width: 600,
+              ),
             ),
             SizedBox(height: 30),
             Center(
@@ -31,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               )
             ),
-            SizedBox(height: 18),
+            SizedBox(height: 22),
             Center(
               child: RaisedButton(
                 onPressed: () {
