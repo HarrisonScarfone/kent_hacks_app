@@ -14,49 +14,32 @@ class ComparisonScreen extends StatefulWidget {
 class _ComparisonScreenState extends State<ComparisonScreen> {
   final userRecord = TextEditingController();
 
-
   @override
-  String recordTitle = 'TODO - get name from database';
   Widget build(BuildContext context) {
+    String recordTitle = 'TODO - get name from database';
     return Scaffold(
     resizeToAvoidBottomInset: false,
       body: Column(
         children: <Widget>[
           Container(
             height: 200,
-            /*decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xFFFF513E),
-                  Color(0xFFFC8902),
-                  Color(0xFFFFF7BF),
-                ],
-              ),
-            ),*/
             padding: EdgeInsets.only(top: 60),
             alignment: Alignment.center,
-            //child: Align(
-            //alignment: Alignment.center,
             child: Image.asset(
               'assets/images/logoappicon.png',
-                //height: 150,
-                //width: 600,
             ),
             //),
           ),
           Container(
             padding: EdgeInsets.all(30),
-            color: Color(0xFF1E1E1F),
             child: Text(
               recordTitle,
-              style: TextStyle(color: Colors.white, fontSize: 22),
+              style: TextStyle(fontSize: 24, fontFamily: 'legenddeca', color: Color(0xFF00B4BD)),
             ),
           ),
+          SizedBox(height: 50),
           Material(
             child: Container(
-                color: Color(0xFF1E1E1F),
                 padding: EdgeInsets.only(top: 5, bottom: 5, left: 30, right: 30),
                 child: Container(
                     child: Theme(
@@ -65,23 +48,17 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
                               labelText: 'Record value',
-                              fillColor: Color(0xFF1E1E1F),
+                              fillColor: Color(0xFFFFF7BF),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide(color: Colors.white,),
+                                borderSide: BorderSide(color: Color(0xFFFFF7BF),),
                               ),
                               border: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white),
+                                borderSide: BorderSide(color: Color(0xFFFFF7BF)),
                               ),
-                              labelStyle: TextStyle(
-                                color: Colors.white,
-                              )
                           ),
                           controller: userRecord,
                           keyboardType: TextInputType.number,
-                          style: TextStyle(
-                            color: Colors.white,
-                          )
                       ),
                     )
                 )
@@ -90,9 +67,9 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
           SizedBox(height: 10),
           Text(
             'TODO - add unit from database',
-            style: TextStyle(color: Colors.white, fontSize: 18, fontStyle: FontStyle.italic),
+            style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic, fontFamily: 'legenddeca', color: Color(0xFF00B4BD)),
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 90),
           Center(
               child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -101,65 +78,33 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                       onPressed: () {
                         _nextRecord();
                       },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      textColor: Colors.white,
                       padding: EdgeInsets.all(0),
                       child: Container(
-                        width: 120,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: <Color>[
-                              Color(0xFFFF513E),
-                              Color(0xFFFC8902),
-                              Color(0xFFFFF7BF),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                        ),
+                        width: 170,
                         padding: EdgeInsets.all(10),
                         child: Align(
                           alignment: Alignment.center,
                           child: Text(
-                              'Skip',
-                              style: TextStyle(fontSize: 25)
+                              'SKIP',
+                              style: TextStyle(fontSize: 25, color: Color(0xFF1E1E1F), fontFamily: 'rockwell', letterSpacing: 5)
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(width: 50),
+                    SizedBox(width: 30),
                     RaisedButton(
                       onPressed: () {
                         _save(userRecord, recordTitle, context);
                       },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      textColor: Colors.white,
                       padding: EdgeInsets.all(0),
                       child: Container(
-                        width: 120,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: <Color>[
-                              Color(0xFFFF513E),
-                              Color(0xFFFC8902),
-                              Color(0xFFFFF7BF),
-                            ],
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                        ),
+                        width: 170,
                         padding: EdgeInsets.all(10),
                         child: Align(
                           alignment: Alignment.center,
                           child: Text(
-                              'Submit',
-                              style: TextStyle(fontSize: 25)
+                              'SUBMIT',
+                              style: TextStyle(fontSize: 25, color: Color(0xFF1E1E1F), fontFamily: 'rockwell', letterSpacing: 5)
                           ),
                         ),
                       ),
@@ -169,7 +114,6 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
           ),
         ],
       ),
-      backgroundColor: Color(0xFF1E1E1F),
     );
   }
 }

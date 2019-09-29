@@ -24,11 +24,11 @@ class _MyAppState extends State<MyApp> {
         fontFamily: 'legenddeca',
         textTheme: TextTheme(
           body1: TextStyle(color: Color(0xFFFFF7BF)),
-          title: TextStyle(fontFamily: '')
+          title: TextStyle(fontFamily: ''),
         ),
       ),
       routes: {
-        '/': (ctx) => ProfileScreen(),
+        '/': (ctx) => ComparisonScreen(),
           ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
