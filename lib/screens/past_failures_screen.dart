@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kent_hack_app/widgets/pr_wr_comparison.dart';
+//import 'package:kent_hack_app/widgets/pr_wr_comparison.dart';
 //import 'package:charts_flutter/flutter.dart' as charts;
 
 class PastFailureScreen extends StatelessWidget {
