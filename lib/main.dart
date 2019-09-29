@@ -28,12 +28,12 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       routes: {
-        '/': (ctx) => ComparisonScreen(),
-//          ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
-//          ProfileScreen.routeName: (ctx) => ProfileScreen(),
-//          PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
-//          CategoriesOverviewScreen.routeName: (ctx) => CategoriesOverviewScreen(),
-//          ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
+        '/': (ctx) => MainMenuScreen(),
+          ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
+          ProfileScreen.routeName: (ctx) => ProfileScreen(),
+          PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
+          CategoriesOverviewScreen.routeName: (ctx) => CategoriesOverviewScreen(),
+          ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
         },
     );
   }
