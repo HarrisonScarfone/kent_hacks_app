@@ -23,4 +23,8 @@ class RecordsList {
     Record('Most piercings in a lifetime', 4225, 'Piercings', 'Human Achievements', 0),
     Record('Most human targets hi with plungers in one minute', 15, 'Person/People', 'Human Achievements', 0),
   ];
+
+  static List<Record> records2 = new List();
+
+  static int count = 0;
 }

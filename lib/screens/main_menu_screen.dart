@@ -25,10 +25,6 @@ class MainMenuScreen extends StatelessWidget {
       Navigator.of(context).pushNamed(ProfileScreen.routeName);
     }
 
-    void goToCategories() {
-      Navigator.of(context).pushNamed(CategoriesOverviewScreen.routeName);
-    }
-
     void goToComparison() {
       Navigator.of(context).pushNamed(ComparisonScreen.routeName);
 
