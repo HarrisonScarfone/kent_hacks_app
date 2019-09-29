@@ -24,11 +24,6 @@ class MainMenuScreen extends StatelessWidget {
       Navigator.of(context).pushNamed(ProfileScreen.routeName);
     }
 
-    void goToCategories(BuildContext context) {
-      Navigator.of(context).pushNamed(
-          CategoriesOverviewScreen.routeName);
-    }
-
     return Scaffold(
       body: Center(
         child: Column(
