@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kent_hack_app/models/randomizer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ComparisonScreen extends StatefulWidget {

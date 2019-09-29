@@ -3,6 +3,7 @@ class Record{
   final int recordNumber;
   final String unit;
   final String category;
+  final int count;
 
-  Record(this.title, this.recordNumber, this.unit, this.category,);
+  Record(this.title, this.recordNumber, this.unit, this.category, this.count);
 }

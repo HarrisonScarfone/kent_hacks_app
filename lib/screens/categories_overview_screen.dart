@@ -7,6 +7,7 @@ class CategoriesOverviewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     void goToComparison() {
       Navigator.of(context).pushNamed(ComparisonScreen.routeName);
     }
