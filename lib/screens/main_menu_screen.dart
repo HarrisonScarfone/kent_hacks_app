@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kent_hack_app/screens/categories_overview_screen.dart';
 import 'package:kent_hack_app/screens/profile_screen.dart';
 import 'package:kent_hack_app/widgets/category_grid_view_circle.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainMenuScreen extends StatelessWidget {
   static const routeName = '/main-menu-screen';
@@ -91,7 +92,9 @@ class MainMenuScreen extends StatelessWidget {
                         height: 50,
                         width: 300,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            _accessTitle();
+                          },
                           child: Text(
                             'RANDOM',
                             style: TextStyle(fontSize: 25, color: Colors.black, letterSpacing: 3),
@@ -105,5 +108,12 @@ class MainMenuScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future <void> _accessTitle() async{
+    String recordTitle = 'TODO - get name from database';
+    final SharedPreferences prefs =  await SharedPreferences.getInstance();
+    var temp = prefs.getDouble(recordTitle);
+    //print(temp);
   }
 }
