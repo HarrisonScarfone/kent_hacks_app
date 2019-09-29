@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:kent_hack_app/screens/comparison_screen.dart';
 import 'package:kent_hack_app/widgets/category_grid_view_circle.dart';
 
+
+
 class CategoriesOverviewScreen extends StatelessWidget {
   static const routeName = '/categories-overview-screen';
 
   @override
   Widget build(BuildContext context) {
+
     void goToComparison() {
       Navigator.of(context).pushNamed(ComparisonScreen.routeName);
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Categories'),
-      ),
       body: GridView(
         padding: const EdgeInsets.all(25),
         children: <Widget>[

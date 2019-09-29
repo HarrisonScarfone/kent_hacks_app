@@ -14,7 +14,25 @@ class PastFailureScreen extends StatelessWidget {
       ),
       body: Column(
         children: <Widget>[
-
+            Column(
+              children: <Widget>[
+               Row(
+                 children: <Widget>[
+                   Text('string1'),
+                   SizedBox(width: 200),
+                   Text('string2'),
+                 ],
+               ),
+                Divider(color: Colors.black,),
+                Row(
+                  children: <Widget>[
+                    Text('string 3'),
+                    SizedBox(width: 200),
+                    Text('string 4'),
+                  ],
+                )
+              ],
+            )
         ],
       )
     );
