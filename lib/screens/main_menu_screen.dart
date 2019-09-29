@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kent_hack_app/screens/categories_overview_screen.dart';
 import 'package:kent_hack_app/screens/profile_screen.dart';
-import 'package:kent_hack_app/widgets/category_grid_view_circle.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class MainMenuScreen extends StatelessWidget {
   static const routeName = '/main-menu-screen';
@@ -13,11 +11,11 @@ class MainMenuScreen extends StatelessWidget {
         "A 1,000 mile journey starts with one step. Then again, so does falling in a ditch and breaking your neck.";
     const containerEdge = EdgeInsets.only(bottom: 15);
 
-    void goToCategories(){
+    void goToCategories() {
       Navigator.of(context).pushNamed(CategoriesOverviewScreen.routeName);
     }
 
-    void goToProfile(){
+    void goToProfile() {
       Navigator.of(context).pushNamed(ProfileScreen.routeName);
     }
 
@@ -31,18 +29,20 @@ class MainMenuScreen extends StatelessWidget {
               alignment: Alignment(0.9, -1.0),
               child: FloatingActionButton(
                 backgroundColor: Color(0xFFFFF7BF),
-                onPressed: () {goToProfile();},
+                onPressed: () {
+                  goToProfile();
+                },
                 child: Icon(Icons.account_circle,
                   size: 55,
                 ),
               ),
             ),
             Container(
-                child: Image.asset('assets/images/logo.png',
-                height: 150,
+              child: Image.asset('assets/images/logo.png',
+                  height: 150,
                   width: 600
-                ),
               ),
+            ),
             SizedBox(height: 50),
             Container(
               width: 350,
@@ -82,7 +82,9 @@ class MainMenuScreen extends StatelessWidget {
                           onPressed: goToCategories,
                           child: Text(
                             'CATEGORIES',
-                            style: TextStyle(fontSize: 25, color: Colors.black, letterSpacing: 3),
+                            style: TextStyle(fontSize: 25,
+                                color: Colors.black,
+                                letterSpacing: 3),
                           ),
                         )),
                   ),
@@ -93,11 +95,13 @@ class MainMenuScreen extends StatelessWidget {
                         width: 300,
                         child: RaisedButton(
                           onPressed: () {
-                            _accessTitle();
+
                           },
                           child: Text(
                             'RANDOM',
-                            style: TextStyle(fontSize: 25, color: Colors.black, letterSpacing: 3),
+                            style: TextStyle(fontSize: 25,
+                                color: Colors.black,
+                                letterSpacing: 3),
                           ),
                         )),
                   ),
@@ -108,12 +112,5 @@ class MainMenuScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Future <void> _accessTitle() async{
-    String recordTitle = 'TODO - get name from database';
-    final SharedPreferences prefs =  await SharedPreferences.getInstance();
-    var temp = prefs.getDouble(recordTitle);
-    //print(temp);
   }
 }
