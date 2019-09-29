@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kent_hack_app/data/RecordsList.dart';
 //import 'package:kent_hack_app/widgets/pr_wr_comparison.dart';
 //import 'package:charts_flutter/flutter.dart' as charts;
 
@@ -16,21 +17,7 @@ class PastFailureScreen extends StatelessWidget {
         children: <Widget>[
             Column(
               children: <Widget>[
-               Row(
-                 children: <Widget>[
-                   Text('string1'),
-                   SizedBox(width: 200),
-                   Text('string2'),
-                 ],
-               ),
-                Divider(color: Colors.black,),
-                Row(
-                  children: <Widget>[
-                    Text('string 3'),
-                    SizedBox(width: 200),
-                    Text('string 4'),
-                  ],
-                )
+
               ],
             )
         ],

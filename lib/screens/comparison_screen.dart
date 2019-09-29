@@ -23,8 +23,11 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
   String record = RecordsList.records[random].getTitle();
   String unit = RecordsList.records[random].getUnit();
 
+
   void submit() {
-    intStack.add([random, int.parse(amountTypedIn)]);
+//    intStack.add([random, int.parse(amountTypedIn)]);
+    RecordsList.records2.add(RecordsList.records[random]);
+    RecordsList.count++;
     random = Randomizer().next(0, RecordsList.records.length - 1);
     setState(
       () {
