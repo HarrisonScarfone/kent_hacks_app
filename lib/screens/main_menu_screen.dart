@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:kent_hack_app/data/Quotes.dart';
+import 'package:kent_hack_app/models/randomizer.dart';
 import 'package:kent_hack_app/screens/categories_overview_screen.dart';
 import 'package:kent_hack_app/screens/profile_screen.dart';
-import 'package:kent_hack_app/widgets/category_grid_view_circle.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'categories_overview_screen.dart';
 
 class MainMenuScreen extends StatelessWidget {
   static const routeName = '/main-menu-screen';
 
   @override
   Widget build(BuildContext context) {
-    String pulledText =
-        "A 1,000 mile journey starts with one step. Then again, so does falling in a ditch and breaking your neck.";
-    const containerEdge = EdgeInsets.only(bottom: 15);
+    String pulledText = Quotes.quotes[Randomizer().next(0, Quotes.quotes.length-1)];
 
-    void goToCategories(){
-      Navigator.of(context).pushNamed(CategoriesOverviewScreen.routeName);
-    }
+    const containerEdge = EdgeInsets.only(bottom: 15);
 
     void goToProfile(){
       Navigator.of(context).pushNamed(ProfileScreen.routeName);
+    }
+
+    void goToCategories(BuildContext context) {
+      Navigator.of(context).pushNamed(
+          CategoriesOverviewScreen.routeName);
     }
 
     return Scaffold(
@@ -79,7 +83,7 @@ class MainMenuScreen extends StatelessWidget {
                         height: 50,
                         width: 300,
                         child: RaisedButton(
-                          onPressed: goToCategories,
+                          onPressed: () => goToCategories,
                           child: Text(
                             'CATEGORIES',
                             style: TextStyle(fontSize: 25, color: Colors.black, letterSpacing: 3),
