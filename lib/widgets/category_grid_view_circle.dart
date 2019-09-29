@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kent_hack_app/screens/category_list_view_screen.dart';
 
 class CategoryGridViewCircle extends StatelessWidget {
   final String title;
+  final Function function;
+  final Icon icon;
 
-  CategoryGridViewCircle({this.title});
+  CategoryGridViewCircle({this.title, this.function, this.icon});
 
 //  void selectCategory(BuildContext ctx) {
 //    Navigator.of(ctx).pushNamed(
@@ -30,14 +31,10 @@ class CategoryGridViewCircle extends StatelessWidget {
               //This keeps the splash effect within the circle
               borderRadius: BorderRadius.circular(1000.0),
               //Something large to ensure a circle
-              onTap: null,
+              onTap: function,
               child: Padding(
                 padding: EdgeInsets.all(20.0),
-                child: Icon(
-                  Icons.message,
-                  size: 30.0,
-                  color: Colors.white,
-                ),
+                child: icon,
               ),
             ),
           ),
@@ -45,7 +42,7 @@ class CategoryGridViewCircle extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        Text('string'),
+        Text(title),
       ],
     );
   }

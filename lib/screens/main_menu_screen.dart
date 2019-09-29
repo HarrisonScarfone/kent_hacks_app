@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kent_hack_app/screens/categories_overview_screen.dart';
 import 'package:kent_hack_app/widgets/category_grid_view_circle.dart';
 
 class MainMenuScreen extends StatelessWidget {
@@ -9,6 +10,10 @@ class MainMenuScreen extends StatelessWidget {
     String pulledText =
         "A 1,000 mile journey starts with one step. Then again, so does falling in a ditch and breaking your neck.";
     const containerEdge = EdgeInsets.only(bottom: 15);
+
+    void goToCategories(){
+      Navigator.of(context).pushNamed(CategoriesOverviewScreen.routeName);
+    }
 
     return Scaffold(
       body: Center(
@@ -68,7 +73,7 @@ class MainMenuScreen extends StatelessWidget {
                         height: 50,
                         width: 300,
                         child: RaisedButton(
-                          onPressed: () {},
+                          onPressed: goToCategories,
                           child: Text(
                             'CATEGORIES',
                             style: TextStyle(fontSize: 25, color: Colors.black, letterSpacing: 3),

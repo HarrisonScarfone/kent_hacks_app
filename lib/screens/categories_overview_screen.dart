@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kent_hack_app/screens/comparison_screen.dart';
 import 'package:kent_hack_app/widgets/category_grid_view_circle.dart';
 
 class CategoriesOverviewScreen extends StatelessWidget {
@@ -6,6 +7,10 @@ class CategoriesOverviewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void goToComparison() {
+      Navigator.of(context).pushNamed(ComparisonScreen.routeName);
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Categories'),
@@ -15,21 +20,52 @@ class CategoriesOverviewScreen extends StatelessWidget {
         children: <Widget>[
           CategoryGridViewCircle(
             title: 'Human Achievements',
+            function: goToComparison,
+            icon: Icon(
+              Icons.work,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
           CategoryGridViewCircle(
-            title: 'Dedication and Collections',
-          ),
+              title: 'Dedication and Collections',
+              function: goToComparison,
+              icon: Icon(
+                Icons.collections,
+                size: 30,
+                color: Colors.white,
+              )),
           CategoryGridViewCircle(
             title: 'Hobbies and Recreation',
+            function: goToComparison,
+            icon: Icon(
+              Icons.golf_course,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
           CategoryGridViewCircle(
             title: 'Food and Drink',
+            function: goToComparison,
+            icon: Icon(
+              Icons.fastfood,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
           CategoryGridViewCircle(
             title: 'Structures/Art and Craft',
+            function: goToComparison,
+            icon: Icon(Icons.art_track),
           ),
           CategoryGridViewCircle(
             title: 'Jobs and Work',
+            function: goToComparison,
+            icon: Icon(
+              Icons.work,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
         ],
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
