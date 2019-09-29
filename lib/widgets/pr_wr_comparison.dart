@@ -28,7 +28,6 @@ class PR_WRComparison extends StatelessWidget {
                ],
              ),
              Row(
-
              ),
            ],
           )

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kent_hack_app/data/Quotes.dart';
 import 'package:kent_hack_app/models/randomizer.dart';
 import 'package:kent_hack_app/screens/categories_overview_screen.dart';
+import 'package:kent_hack_app/screens/comparison_screen.dart';
 import 'package:kent_hack_app/screens/profile_screen.dart';
 
 import 'categories_overview_screen.dart';
@@ -11,7 +12,8 @@ class MainMenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String pulledText = Quotes.quotes[Randomizer().next(0, Quotes.quotes.length-1)];
+    String pulledText =
+        Quotes.quotes[Randomizer().next(0, Quotes.quotes.length - 1)];
 
     void goToCategories() {
       Navigator.of(context).pushNamed(CategoriesOverviewScreen.routeName);
@@ -19,9 +21,13 @@ class MainMenuScreen extends StatelessWidget {
     
     const containerEdge = EdgeInsets.only(bottom: 15);
 
-
     void goToProfile() {
       Navigator.of(context).pushNamed(ProfileScreen.routeName);
+    }
+
+    void goToComparison() {
+      Navigator.of(context).pushNamed(ComparisonScreen.routeName);
+
     }
 
     return Scaffold(
@@ -37,16 +43,16 @@ class MainMenuScreen extends StatelessWidget {
                 onPressed: () {
                   goToProfile();
                 },
-                child: Icon(Icons.account_circle,
+                child: Icon(
+                  Icons.account_circle,
+
                   size: 55,
                 ),
               ),
             ),
             Container(
               child: Image.asset('assets/images/logo.png',
-                  height: 150,
-                  width: 600
-              ),
+                  height: 150, width: 600),
             ),
             SizedBox(height: 50),
             Container(
@@ -84,10 +90,13 @@ class MainMenuScreen extends StatelessWidget {
                         height: 50,
                         width: 300,
                         child: RaisedButton(
-                          onPressed: () => goToCategories,
+                          onPressed: goToCategories,
                           child: Text(
                             'CATEGORIES',
-                            style: TextStyle(fontSize: 25,
+
+                            style: TextStyle(
+                                fontSize: 25,
+
                                 color: Colors.black,
                                 letterSpacing: 3),
                           ),
@@ -99,12 +108,13 @@ class MainMenuScreen extends StatelessWidget {
                         height: 50,
                         width: 300,
                         child: RaisedButton(
-                          onPressed: () {
 
-                          },
+                          onPressed: goToComparison,
                           child: Text(
                             'RANDOM',
-                            style: TextStyle(fontSize: 25,
+                            style: TextStyle(
+                                fontSize: 25,
+
                                 color: Colors.black,
                                 letterSpacing: 3),
                           ),
@@ -119,3 +129,4 @@ class MainMenuScreen extends StatelessWidget {
     );
   }
 }
+

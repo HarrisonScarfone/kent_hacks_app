@@ -3,14 +3,34 @@ import 'package:kent_hack_app/widgets/failure_views.dart';
 
 class PastFailureScreen extends StatelessWidget {
   static const routeName = '/past-failures-screen';
-  final List<List<int>> args = ModalRoute.of(args).settings.arguments;
 
   @override
   Widget build(BuildContext context) {
+    final List<List<int>> args = ModalRoute.of(context).settings.arguments;
+    print(args);
     return Scaffold(
       body: Center(
           child: Column(
         children: <Widget>[
+            Column(
+              children: <Widget>[
+               Row(
+                 children: <Widget>[
+                   Text('string1'),
+                   SizedBox(width: 200),
+                   Text('string2'),
+                 ],
+               ),
+                Divider(color: Colors.black,),
+                Row(
+                  children: <Widget>[
+                    Text('string 3'),
+                    SizedBox(width: 200),
+                    Text('string 4'),
+                  ],
+                )
+              ],
+            ),
           SizedBox(height: 30),
           Text(
             'Past Failures',
@@ -38,7 +58,8 @@ class PastFailureScreen extends StatelessWidget {
             ),
           ),
         ],
-      )),
+      ),
+    )
     );
   }
 }
