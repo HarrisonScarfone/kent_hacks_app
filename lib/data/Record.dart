@@ -1,9 +1,9 @@
 class Record {
-  final String title;
-  final int recordNumber;
-  final String unit;
-  final String category;
-  final int count;
+  String title;
+  int recordNumber;
+  String unit;
+  String category;
+  int count;
 
   Record(this.title, this.recordNumber, this.unit, this.category, this.count);
 
@@ -15,15 +15,19 @@ class Record {
     return recordNumber;
   }
 
-  String getUnit(){
+  String getUnit() {
     return unit;
   }
 
-  String getCateogry(){
+  String getCateogry() {
     return category;
   }
 
-  int getCount(){
+  int getCount() {
     return count;
+  }
+
+  void setCount(int a) {
+    count = a;
   }
 }

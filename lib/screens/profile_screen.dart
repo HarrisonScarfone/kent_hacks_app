@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:kent_hack_app/data/RecordsList.dart';
 import 'package:kent_hack_app/screens/past_failures_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   static const routeName = '/profile-screen';
 
   String name = "TODO - pull user\'s name from storage";
-  int records = 0; //TODO - count the number of records that were compared against
+  int records = RecordsList.count; //TODO - count the number of records that were compared against
 
   @override
   Widget build(BuildContext context) {
