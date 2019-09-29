@@ -14,6 +14,13 @@ class DatabaseAccess {
         .where('category', isEqualTo: category)
         .getDocuments();
   }
+
+  getQueryOfString(String collection, int id) {
+    return Firestore.instance
+        .collection('quotes')
+        .where('id', isEqualTo: id)
+        .getDocuments();
+  }
 }
 
 //onPressed: () {
