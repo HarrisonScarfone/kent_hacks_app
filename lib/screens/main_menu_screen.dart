@@ -4,7 +4,6 @@ import 'package:kent_hack_app/models/randomizer.dart';
 import 'package:kent_hack_app/screens/categories_overview_screen.dart';
 import 'package:kent_hack_app/screens/comparison_screen.dart';
 import 'package:kent_hack_app/screens/profile_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'categories_overview_screen.dart';
 
@@ -16,6 +15,10 @@ class MainMenuScreen extends StatelessWidget {
     String pulledText =
         Quotes.quotes[Randomizer().next(0, Quotes.quotes.length - 1)];
 
+    void goToCategories() {
+      Navigator.of(context).pushNamed(CategoriesOverviewScreen.routeName);
+    }
+    
     const containerEdge = EdgeInsets.only(bottom: 15);
 
     void goToProfile() {
@@ -28,6 +31,7 @@ class MainMenuScreen extends StatelessWidget {
 
     void goToComparison() {
       Navigator.of(context).pushNamed(ComparisonScreen.routeName);
+
     }
 
     return Scaffold(
@@ -45,6 +49,7 @@ class MainMenuScreen extends StatelessWidget {
                 },
                 child: Icon(
                   Icons.account_circle,
+
                   size: 55,
                 ),
               ),
@@ -92,8 +97,10 @@ class MainMenuScreen extends StatelessWidget {
                           onPressed: goToCategories,
                           child: Text(
                             'CATEGORIES',
+
                             style: TextStyle(
                                 fontSize: 25,
+
                                 color: Colors.black,
                                 letterSpacing: 3),
                           ),
@@ -105,11 +112,13 @@ class MainMenuScreen extends StatelessWidget {
                         height: 50,
                         width: 300,
                         child: RaisedButton(
+
                           onPressed: goToComparison,
                           child: Text(
                             'RANDOM',
                             style: TextStyle(
                                 fontSize: 25,
+
                                 color: Colors.black,
                                 letterSpacing: 3),
                           ),
@@ -123,11 +132,5 @@ class MainMenuScreen extends StatelessWidget {
       ),
     );
   }
-
-  Future<void> _accessTitle() async {
-    String recordTitle = 'TODO - get name from database';
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    var temp = prefs.getDouble(recordTitle);
-    //print(temp);
-  }
 }
+
