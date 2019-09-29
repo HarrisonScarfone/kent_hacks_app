@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       routes: {
-        '/': (ctx) => MainMenuScreen(),
+        '/': (ctx) => ProfileScreen(),
           ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
