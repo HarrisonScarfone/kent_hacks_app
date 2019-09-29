@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kent_hack_app/screens/categories_overview_screen.dart';
+import 'package:kent_hack_app/screens/profile_screen.dart';
 import 'package:kent_hack_app/widgets/category_grid_view_circle.dart';
 
 class MainMenuScreen extends StatelessWidget {
@@ -15,6 +16,10 @@ class MainMenuScreen extends StatelessWidget {
       Navigator.of(context).pushNamed(CategoriesOverviewScreen.routeName);
     }
 
+    void goToProfile(){
+      Navigator.of(context).pushNamed(ProfileScreen.routeName);
+    }
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -25,7 +30,7 @@ class MainMenuScreen extends StatelessWidget {
               alignment: Alignment(0.9, -1.0),
               child: FloatingActionButton(
                 backgroundColor: Color(0xFFFFF7BF),
-                onPressed: () {},
+                onPressed: () {goToProfile();},
                 child: Icon(Icons.account_circle,
                   size: 55,
                 ),
