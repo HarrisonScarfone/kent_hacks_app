@@ -11,7 +11,7 @@ class CategoryGridViewCircle extends StatelessWidget {
 //    Navigator.of(ctx).pushNamed(
 //      CategoryListViewScreen.routeName,
 //      arguments: {
-//
+//R
 //      },
 //    );
 //  }
@@ -23,8 +23,8 @@ class CategoryGridViewCircle extends StatelessWidget {
         Material(
           child: Ink(
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.indigoAccent, width: 8.0),
-              color: Colors.indigo[900],
+              border: Border.all(color: Color(0xFF00B4BD), width: 8.0),
+              color: Color(0xFF1E1E1F),
               shape: BoxShape.circle,
             ),
             child: InkWell(

@@ -14,6 +14,10 @@ class ProfileScreen extends StatelessWidget {
       Navigator.of(context).pushNamed(PastFailureScreen.routeName);
     }
 
+    void incrementRecords() {
+      records++;
+    }
+
     return Scaffold(
       body: Center(
         child: Column(

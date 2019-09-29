@@ -24,7 +24,7 @@ class CategoriesOverviewScreen extends StatelessWidget {
             icon: Icon(
               Icons.work,
               size: 30,
-              color: Colors.white,
+              color: Color(0xFF00B4BD),
             ),
           ),
           CategoryGridViewCircle(
@@ -33,7 +33,7 @@ class CategoriesOverviewScreen extends StatelessWidget {
               icon: Icon(
                 Icons.collections,
                 size: 30,
-                color: Colors.white,
+                color: Color(0xFF00B4BD),
               )),
           CategoryGridViewCircle(
             title: 'Hobbies and Recreation',
@@ -41,7 +41,7 @@ class CategoriesOverviewScreen extends StatelessWidget {
             icon: Icon(
               Icons.golf_course,
               size: 30,
-              color: Colors.white,
+              color: Color(0xFF00B4BD),
             ),
           ),
           CategoryGridViewCircle(
@@ -50,13 +50,17 @@ class CategoriesOverviewScreen extends StatelessWidget {
             icon: Icon(
               Icons.fastfood,
               size: 30,
-              color: Colors.white,
+              color: Color(0xFF00B4BD),
             ),
           ),
           CategoryGridViewCircle(
             title: 'Structures/Art and Craft',
             function: goToComparison,
-            icon: Icon(Icons.art_track),
+            icon: Icon(
+              Icons.art_track,
+              size: 30,
+              color: Color(0xFF00B4BD),
+            ),
           ),
           CategoryGridViewCircle(
             title: 'Jobs and Work',
@@ -64,7 +68,7 @@ class CategoriesOverviewScreen extends StatelessWidget {
             icon: Icon(
               Icons.work,
               size: 30,
-              color: Colors.white,
+              color: Color(0xFF00B4BD),
             ),
           ),
         ],

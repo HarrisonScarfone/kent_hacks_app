@@ -86,7 +86,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                           alignment: Alignment.center,
                           child: Text(
                               'SKIP',
-                              style: TextStyle(fontSize: 25, color: Color(0xFF1E1E1F), fontFamily: 'rockwell', letterSpacing: 5)
+                              style: TextStyle(fontSize: 25, color: Color(0xFF1E1E1F), fontFamily: 'legenddeca', letterSpacing: 5)
                           ),
                         ),
                       ),
@@ -104,7 +104,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                           alignment: Alignment.center,
                           child: Text(
                               'SUBMIT',
-                              style: TextStyle(fontSize: 25, color: Color(0xFF1E1E1F), fontFamily: 'rockwell', letterSpacing: 5)
+                              style: TextStyle(fontSize: 25, color: Color(0xFF1E1E1F), fontFamily: 'legenddeca', letterSpacing: 5)
                           ),
                         ),
                       ),
