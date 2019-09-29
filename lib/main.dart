@@ -31,9 +31,8 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       routes: {
-        '/': (ctx) => MainMenuScreen(),
+        '/': (ctx) => ProfileScreen(),
           ComparisonScreen.routeName: (ctx) => ComparisonScreen(),
-          HomeScreen.routeName: (ctx) => HomeScreen(),
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           PastFailureScreen.routeName: (ctx) => PastFailureScreen(),
           CategoriesOverviewScreen.routeName: (ctx) => CategoriesOverviewScreen(),
