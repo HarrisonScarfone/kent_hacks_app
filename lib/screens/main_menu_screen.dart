@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kent_hack_app/data/Quotes.dart';
 import 'package:kent_hack_app/models/randomizer.dart';
 import 'package:kent_hack_app/screens/categories_overview_screen.dart';
+import 'package:kent_hack_app/screens/comparison_screen.dart';
 import 'package:kent_hack_app/screens/profile_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,17 +13,21 @@ class MainMenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String pulledText = Quotes.quotes[Randomizer().next(0, Quotes.quotes.length-1)];
+    String pulledText =
+        Quotes.quotes[Randomizer().next(0, Quotes.quotes.length - 1)];
 
     const containerEdge = EdgeInsets.only(bottom: 15);
 
-    void goToProfile(){
+    void goToProfile() {
       Navigator.of(context).pushNamed(ProfileScreen.routeName);
     }
 
-    void goToCategories(BuildContext context) {
-      Navigator.of(context).pushNamed(
-          CategoriesOverviewScreen.routeName);
+    void goToCategories() {
+      Navigator.of(context).pushNamed(CategoriesOverviewScreen.routeName);
+    }
+
+    void goToComparison() {
+      Navigator.of(context).pushNamed(ComparisonScreen.routeName);
     }
 
     return Scaffold(
@@ -35,18 +40,19 @@ class MainMenuScreen extends StatelessWidget {
               alignment: Alignment(0.9, -1.0),
               child: FloatingActionButton(
                 backgroundColor: Color(0xFFFFF7BF),
-                onPressed: () {goToProfile();},
-                child: Icon(Icons.account_circle,
+                onPressed: () {
+                  goToProfile();
+                },
+                child: Icon(
+                  Icons.account_circle,
                   size: 55,
                 ),
               ),
             ),
             Container(
-                child: Image.asset('assets/images/logo.png',
-                height: 150,
-                  width: 600
-                ),
-              ),
+              child: Image.asset('assets/images/logo.png',
+                  height: 150, width: 600),
+            ),
             SizedBox(height: 50),
             Container(
               width: 350,
@@ -83,10 +89,13 @@ class MainMenuScreen extends StatelessWidget {
                         height: 50,
                         width: 300,
                         child: RaisedButton(
-                          onPressed: () => goToCategories,
+                          onPressed: goToCategories,
                           child: Text(
                             'CATEGORIES',
-                            style: TextStyle(fontSize: 25, color: Colors.black, letterSpacing: 3),
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.black,
+                                letterSpacing: 3),
                           ),
                         )),
                   ),
@@ -96,12 +105,13 @@ class MainMenuScreen extends StatelessWidget {
                         height: 50,
                         width: 300,
                         child: RaisedButton(
-                          onPressed: () {
-                            _accessTitle();
-                          },
+                          onPressed: goToComparison,
                           child: Text(
                             'RANDOM',
-                            style: TextStyle(fontSize: 25, color: Colors.black, letterSpacing: 3),
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.black,
+                                letterSpacing: 3),
                           ),
                         )),
                   ),
@@ -114,9 +124,9 @@ class MainMenuScreen extends StatelessWidget {
     );
   }
 
-  Future <void> _accessTitle() async{
+  Future<void> _accessTitle() async {
     String recordTitle = 'TODO - get name from database';
-    final SharedPreferences prefs =  await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     var temp = prefs.getDouble(recordTitle);
     //print(temp);
   }

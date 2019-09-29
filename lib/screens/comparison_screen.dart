@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kent_hack_app/data/Record.dart';
+import 'package:kent_hack_app/data/RecordsList.dart';
+import 'package:kent_hack_app/models/randomizer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ComparisonScreen extends StatefulWidget {
@@ -11,11 +14,38 @@ class ComparisonScreen extends StatefulWidget {
 }
 
 class _ComparisonScreenState extends State<ComparisonScreen> {
+
+  static int random = Randomizer().next(0, RecordsList.records.length-1);
+
+  String record = RecordsList.records[random].getTitle();
+  int amount = RecordsList.records[random].getCount();
+  String unit = RecordsList.records[random].getUnit();
+
+  void submit(){
+    random = Randomizer().next(0, RecordsList.records.length-1);
+    setState(() {
+      record = RecordsList.records[random].getTitle();
+      amount = RecordsList.records[random].getCount();
+      unit = RecordsList.records[random].getUnit();
+    });
+  }
+
+  void skip(){
+    random = Randomizer().next(0, RecordsList.records.length-1);
+    setState(() {
+      record = RecordsList.records[random].getTitle();
+      amount = RecordsList.records[random].getCount();
+      unit = RecordsList.records[random].getUnit();
+    });
+  }
+
+
+
+
   final userRecord = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    String recordTitle = 'TODO - get name from database';
     return Scaffold(
     resizeToAvoidBottomInset: false,
       body: Column(
@@ -32,7 +62,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
           Container(
             padding: EdgeInsets.all(30),
             child: Text(
-              recordTitle,
+              record,
               style: TextStyle(fontSize: 24, fontFamily: 'legenddeca', color: Color(0xFF00B4BD)),
             ),
           ),
@@ -46,7 +76,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                       child: TextField(
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
-                              labelText: 'Record value',
+                              labelText: amount.toString(),
                               fillColor: Color(0xFFFFF7BF),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(20),
@@ -65,7 +95,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
           ),
           SizedBox(height: 10),
           Text(
-            'TODO - add unit from database',
+            unit,
             style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic, fontFamily: 'legenddeca', color: Color(0xFF00B4BD)),
           ),
           SizedBox(height: 90),
@@ -74,9 +104,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     RaisedButton(
-                      onPressed: () {
-                        _nextRecord();
-                      },
+                      onPressed: skip,
                       padding: EdgeInsets.all(0),
                       child: Container(
                         width: 170,
@@ -92,9 +120,7 @@ class _ComparisonScreenState extends State<ComparisonScreen> {
                     ),
                     SizedBox(width: 30),
                     RaisedButton(
-                      onPressed: () {
-                        _save(userRecord, recordTitle, context);
-                      },
+                      onPressed: submit,
                       padding: EdgeInsets.all(0),
                       child: Container(
                         width: 170,
